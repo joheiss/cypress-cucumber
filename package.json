@@ -7,18 +7,39 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "regression:full": "npx cypress run -e TAGS='@regression'",
+    "contact-us:only": "npx cypress run -e TAGS='@contact-us'",
+    "login:only": "npx cypress run -e TAGS='@login'",
+    "smoke:full": "npx cypress run -e TAGS='@smoke'",
+    "multi-report": "node cucumber-html-report.js",
+    "smoke:report": "npm run smoke:full || npm run multi-report",
+    "regression:report": "npm run regression:full || npm run multi-report"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
-    "cypress": "^14.2.1"
+    "cypress": "^14.2.1",
+    "multiple-cucumber-html-reporter": "^3.9.2"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
       "cypress/support/step_definitions/**/*.{js,ts}",
-        "cypress/e2e/[filepath]/**/*.{js,ts}",
-        "cypress/e2e/[filepath].{js,ts}"
-    ]
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}"
+    ],
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
   }
 }
