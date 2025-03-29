@@ -12,3 +12,11 @@ docker run -p 8080:8080 -p 50000:50000 -v /Users/joheiss/dev/volumes:/var/jenkin
 
 ### jenkins initial password
 d43a3c9d819f4f4b8277955bd7d4528b
+
+## install xvfb in jenkins docker image
+### login as root
+docker exec -it -u root addec38956c8 /bin/bash
+### install xvfb
+apt-get update
+apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+apt-get install -y libgbm-dev

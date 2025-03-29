@@ -8,10 +8,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "regression:full": "npx cypress run -e TAGS='@regression' --headless",
-    "contact-us:only": "npx cypress run -e TAGS='@contact-us'",
-    "login:only": "npx cypress run -e TAGS='@login'",
-    "smoke:full": "npx cypress run -e TAGS='@smoke'",
+    "regression:full": "npx cypress run -e TAGS='@regression and not @ignore' --headless",
+    "contact-us:only": "npx cypress run -e TAGS='@contact-us and not @ignore'",
+    "login:only": "npx cypress run -e TAGS='@login and not @ignore'",
+    "smoke:full": "npx cypress run -e TAGS='@smoke and not @ignore'",
     "multi-report": "node cucumber-html-report.js",
     "smoke:report": "npm run smoke:full && npm run multi-report",
     "regression:report": "npm run regression:full && npm run multi-report"
