@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "regression:full": "npx cypress run -e TAGS='@regression'",
+    "regression:full": "npx cypress run -e TAGS='@regression' --headless",
     "contact-us:only": "npx cypress run -e TAGS='@contact-us'",
     "login:only": "npx cypress run -e TAGS='@login'",
     "smoke:full": "npx cypress run -e TAGS='@smoke'",
