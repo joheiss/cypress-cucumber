@@ -14,8 +14,8 @@ Feature: WebdriverUniversity - Login
     Then I should get an alert message: "<message>"
 
     Examples:
-      | userName  | password     | message              |
-      | webdriver | webdriver123 | validation succeeded |
-      | webdriver | falsch       | validation failed    |
-      | falsch    | webdriver123 | validation failed    |
-      | falsch    | falsch       | validation failed    |
+      | userName  | password     | message               |
+      | webdriver | webdriver123 | Xvalidation succeeded |
+      | webdriver | falsch       | validation failed     |
+      | falsch    | webdriver123 | validation failed     |
+      | falsch    | falsch       | Xvalidation failed    |
