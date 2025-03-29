@@ -13,14 +13,15 @@
     "login:only": "npx cypress run -e TAGS='@login'",
     "smoke:full": "npx cypress run -e TAGS='@smoke'",
     "multi-report": "node cucumber-html-report.js",
-    "smoke:report": "npm run smoke:full || npm run multi-report",
-    "regression:report": "npm run regression:full || npm run multi-report"
+    "smoke:report": "npm run smoke:full && npm run multi-report",
+    "regression:report": "npm run regression:full && npm run multi-report"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "cypress": "^14.2.1",
-    "multiple-cucumber-html-reporter": "^3.9.2"
+    "multiple-cucumber-html-reporter": "^3.9.2",
+    "ts-node": "^10.9.2"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [

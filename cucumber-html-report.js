@@ -8,6 +8,6 @@ report.generate({
   displayDuration: true,
   metadata: {
     device: "Local test machine",
-    platform: { name: "darwin", version: "15.3.2" },
+    platform: { name: "osx", version: "15.3.2" },
   },
 });

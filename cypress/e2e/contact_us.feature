@@ -2,9 +2,11 @@
 Feature: WebdriverUniversity - Contact Us Page
 
   Background:
-    Given I navigate to the web page "https://www.webdriveruniversity.com/"
-    And I click on the contact us button
-
+    # Given I navigate to the web page "https://www.webdriveruniversity.com/"
+    # Given I navigate to the webdriveruniversity homepage
+    # And I click on the contact us button
+    Given I navigate to the contact us page
+    
   Scenario: Valid "contact us" form submission
     When I type in a first name
     And I type in a last name
@@ -56,10 +58,11 @@ Feature: WebdriverUniversity - Contact Us Page
     And I enter the email address "<emailAddress>"
     And I type in the comment "<comment>"
     And I click the submit button
+    And I wait for 0 milliseconds
     Then I should be presented with message: "<message>"
 
     Examples:
       | firstName | lastName | emailAddress     | comment                     | message                      |
       | Annerl    | Angerer  | annerl@horsti.de | Ja, das Annerl kommt mit!   | Thank You for your Message!  |
-      | Traudl    | Trinkl   | traudl@horsti.de | Oje, die Traudl kommt auch! | XThank You for your Message!  |
-      | Xaverl    | Xäler    | falsch           | Der Xare kann's nicht!      | XError: Invalid email address |
+      | Traudl    | Trinkl   | traudl@horsti.de | Oje, die Traudl kommt auch! | Thank You for your Message!  |
+      | Xaverl    | Xäler    | falsch           | Der Xare kann's nicht!      | Error: Invalid email address |

@@ -2,8 +2,9 @@
 Feature: WebdriverUniversity - Login
 
   Background:
-    Given I navigate to the web page "https://www.webdriveruniversity.com/"
-    And I click on the login button
+    # Given I navigate to the web page "https://www.webdriveruniversity.com/"
+    # And I click on the login button
+    Given I navigate to the login page
 
   @smoke
   Scenario Outline: Validate "Login Page" with valid and invalid  username / password combinations
