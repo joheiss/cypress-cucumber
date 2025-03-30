@@ -6,11 +6,11 @@ export class HomePagePO extends BasePO {
     super.navigate();
   }
 
-  public clickOnContactUsButton() {
+  public clickContactUsButton() {
     cy.clickAndOpenLinkInSameTab("#contact-us");
   }
 
-  public clickOnLoginButton() {
+  public clickLoginButton() {
     cy.clickAndOpenLinkInSameTab("#login-portal");
   }
 }

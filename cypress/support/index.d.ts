@@ -1,11 +1,7 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
-  interface Chainable {
-    /**
-     * Custom command to select DOM element by data-cy attribute.
-     * @example cy.dataCy('greeting')
-     */
-    clickAndOpenLinkInSameTab(value: string): Chainable<Element>;
+  interface Chainable<Subject = any> {
+    clickAndOpenLinkInSameTab(value: string): Chainable<any>;
   }
 }

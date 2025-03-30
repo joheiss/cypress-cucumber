@@ -17,11 +17,11 @@ Given(/I navigate to the web page "(.*)"/, (webUrl:string) => {
 When(/I click on the contact us button/, () => {
   // cy.get("#contact-us").invoke("removeAttr", "target").click();
   // cy.clickAndOpenLinkInSameTab("#contact-us");
-  homePage.clickOnContactUsButton();
+  homePage.clickContactUsButton();
 });
 
 When(/I click on the login button/, () => {
   // cy.get("#login-portal").invoke("removeAttr", "target").click();
   // cy.clickAndOpenLinkInSameTab("#login-portal");
-  homePage.clickOnLoginButton();
+  homePage.clickLoginButton();
 });

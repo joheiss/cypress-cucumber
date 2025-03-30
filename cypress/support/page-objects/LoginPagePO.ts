@@ -14,7 +14,7 @@ export class LoginPagePO extends BasePO {
     cy.get("#password").type(password);
   }
 
-  public clickOnLoginButton() {
+  public clickLoginButton() {
     cy.get("#login-button").click();
   }
 }

@@ -20,7 +20,7 @@ When(/I (?:type in|enter) the password "(.*)"/, (password:string) => {
 When(/I click the login button/, () => {
   stub = cy.stub();
   cy.on("window:alert", stub);
-  loginPage.clickOnLoginButton();
+  loginPage.clickLoginButton();
 });
 
 Then(/I should get an alert message: "(.*)"/, (alertMessage:string) => {

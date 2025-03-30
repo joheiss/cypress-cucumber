@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+jenkins:
+build: .
+container_name: jenkins-custom
+restart: unless-stopped
+ports: - "8080:8080" - "50000:50000"
+volumes: - jenkins_home:/var/jenkins_home
+environment: - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+privileged: true
+
+volumes:
+jenkins_home:
